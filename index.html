@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Night Mode Playground</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #e2e8f0;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      opacity: 0.7;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    button {
+      background: #38bdf8;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #0f172a;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to your random website</h1>
+  <p>Mert miért ne? Ez is egy projekt.</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Random gondolat</h2>
+    <p id="thought">Kattints a gombra és kapsz valami mély (vagy nem) gondolatot.</p>
+    <button onclick="newThought()">Adj egy gondolatot</button>
+  </div>
+
+  <div class="card">
+    <h2>Motiváció</h2>
+    <p>Valószínűleg procrastinálsz, de legalább ezt most megcsináltad.</p>
+  </div>
+
+  <div class="card">
+    <h2>Mini játék</h2>
+    <p>Kattints, hogy növeld a pontszámod.</p>
+    <p>Pont: <span id="score">0</span></p>
+    <button onclick="addPoint()">+1 pont</button>
+  </div>
+</div>
+
+<footer>
+  <p>Made with minimal effort, maximum vibe.</p>
+</footer>
