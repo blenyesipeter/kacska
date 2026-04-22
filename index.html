@@ -1,53 +1,4 @@
 <!DOCTYPE html>
-<html lang="hu">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Night Mode Playground</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #e2e8f0;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      opacity: 0.7;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    button {
-      background: #38bdf8;
-      border: none;
       padding: 10px 20px;
       border-radius: 10px;
       cursor: pointer;
@@ -92,3 +43,39 @@
 <footer>
   <p>Made with minimal effort, maximum vibe.</p>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const thoughts = [
+      "Az idő pénz, és te most épp elégeted.",
+      "Minden működik... amíg hozzá nem nyúlsz.",
+      "Holnap produktív leszel. Persze.",
+      "A motiváció egy mítosz, a határidő az igazi erő.",
+      "Ez az oldal is csak azért létezik, mert halogattál.",
+      "Baszódj meg.",
+      "Legalább próbálkozol. Az is valami.",
+      "Ez most nem volt jó döntés, de legalább következetes vagy.",
+      "Ha ezt olvasod, még mindig nem azt csinálod, amit kéne.",
+      "Nyugi, mindenki improvizál az életben. Te csak látványosabban."
+    ];
+
+    const thoughtEl = document.getElementById("thought");
+    const scoreEl = document.getElementById("score");
+
+    let score = 0;
+
+    window.newThought = function () {
+      const random = Math.floor(Math.random() * thoughts.length);
+      thoughtEl.innerText = thoughts[random];
+    };
+
+    window.addPoint = function () {
+      score++;
+      scoreEl.innerText = score;
+    };
+  });
+</script>
+
+</body>
+</html>
+
